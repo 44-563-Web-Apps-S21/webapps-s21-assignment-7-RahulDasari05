@@ -1,63 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Rahul Find the Treasure</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
+  <head>
+    <title>Rahul Find the Treasure</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
     <style>
-        h1 {text-align: center;}
-        p {text-align: center;}
-        div {text-align: center;}
-        div.column {text-align: center;}
-        </style>
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      div {
+        text-align: center;
+      }
+      div.column {
+        text-align: center;
+      }
+    </style>
     <p>Click on the squares to find the treasure</p>
-    <p>Number of clicks is zero.</p>
-    <p>Distance is unknown.</p>
-
+    <p id="clicks">Number of clicks is zero.</p>
+    <p id="distance">Distance is unknown.</p>
 
     <div class="row">
-        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-        </div>
-        
-        <div class="row">
-            <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-            <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-            <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-            <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-            <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-            </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img00"
+          onclick="makeGuess(0)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img01"
+          onclick="makeGuess(1)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img02"
+          onclick="makeGuess(2)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img03"
+          onclick="makeGuess(3)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img04"
+          onclick="makeGuess(4)"
+          height="80"
+          width="80"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img05"
+          onclick="makeGuess(5)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img06"
+          onclick="makeGuess(6)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img07"
+          onclick="makeGuess(7)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img08"
+          onclick="makeGuess(8)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img09"
+          onclick="makeGuess(9)"
+          height="80"
+          width="80"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img10"
+          onclick="makeGuess(10)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img11"
+          onclick="makeGuess(11)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img12"
+          onclick="makeGuess(12)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img13"
+          onclick="makeGuess(13)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img14"
+          onclick="makeGuess(14)"
+          height="80"
+          width="80"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img15"
+          onclick="makeGuess(15)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img16"
+          onclick="makeGuess(16)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img17"
+          onclick="makeGuess(17)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img18"
+          onclick="makeGuess(18)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img19"
+          onclick="makeGuess(19)"
+          height="80"
+          width="80"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img20"
+          onclick="makeGuess(20)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img21"
+          onclick="makeGuess(21)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img22"
+          onclick="makeGuess(22)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img23"
+          onclick="makeGuess(23)"
+          height="80"
+          width="80"
+        />
+      </div>
+      <div class="column">
+        <img
+          src="images/empty.png"
+          id="img24"
+          onclick="makeGuess(24)"
+          height="80"
+          width="80"
+        />
+      </div>
+    </div>
+
+    <script>
+      var ids = ["img00","img01","img02","img03","img04","img05","img06","img07","img08","img09","img10","img11","img12","img13","img14","img15","img16","img17","img18","img19","img20","img21","img22","img23","img24"];
+      var clickCount = 0;
+      var treasureLocation = 18;
 
 
-            <div class="row">
-                <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                </div>
-                <div class="row">
-                    <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                    <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                    <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                    <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                    <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                    </div>
-                    <div class="row">
-                        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                        <div class="column"><img src="images/empty.png" height="80" width="80"></div>
-                        </div>
-</body>
+        function makeGuess(num){
+            
+          out = document.getElementById(ids[num]);
+          clicksElement = document.getElementById("clicks");
+          distanceElement = document.getElementById("distance");
+          if (num==treasureLocation){
+            out.src = "images/square.jpg"
+          }else{
+            out.src = "images/dirt.jpg"
+          }
+          clickCount++;
+          clicksElement.innerHTML = "Number of clicks are "+clickCount + ".";
+
+          var distances = distance(num,treasureLocation);
+          distanceElement.innerHTML = "You are "+distances[0]+" Horizontal and "+distances[1]+" Verticle steps away from treasure" 
+        }
+        function distance (pos1, pos2){
+          var horizontalPos1 = pos1 % 5;
+          var horizontalPos2 = pos2 % 5;
+          var horizontalDistance = Math.abs(horizontalPos1-horizontalPos2);
+          var verticalPos1 = parseInt(pos1/5);
+          var verticalPos2 = parseInt(pos2/5);
+          var vertticleDistance = Math.abs(verticalPos1 - verticalPos2);
+          return [horizontalDistance, vertticleDistance];
+        }
+
+    </script>
+  </body>
 </html>
