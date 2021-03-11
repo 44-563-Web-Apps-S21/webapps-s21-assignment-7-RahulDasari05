@@ -25,9 +25,9 @@
 
 <body>
 		<div class="flex-container" id="target">
-		  <div class="listy">row item 1</div>   
-		  <div class="listy">row item 2</div>  
-		  <div class="listy">row item 3</div>  
+		  <div>row item 1</div>   
+		  <div>row item 2</div>  
+		  <div>row item 3</div>  
 		</div>
 
 		<input type="text" name="element" id="inputElement">
@@ -43,8 +43,23 @@
 	function makeNewDiv(){
 		/* make the div and its text */
 		input = document.getElementById("inputElement")
+		hasRemoved = false;
+		var listitem = document.getElementsByClassName("listy")
+
+		if(listitem.length>9){
+			for(i = 0;i<listitem.size;i++){
+				if (listitem[i].innerHTML == input.value){
+					document.getElementById('target').removeChild(listitem[i])
+					hasRemoved = true;
+				}
+			}
+			if(!hasRemoved){
+				document.getElementById('target').removeChild(listitem[0])
+			}
+		}
 
 		let element = document.createElement("p")
+		element.className = "listy";
 		element.innerHTML = input.value
 		element.style.color = "orange"
 
